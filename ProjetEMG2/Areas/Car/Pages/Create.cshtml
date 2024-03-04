@@ -1,0 +1,95 @@
+﻿@page
+@model ProjetEMG2.Areas.Car.Pages.CreateModel
+
+@{
+    ViewData["Title"] = "Create";
+    Layout = "~/Pages/Shared/_Layout.cshtml";
+}
+
+<h1>Création</h1>
+
+<h4>Voiture</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Car.CodeVIN" class="control-label">Code VIN</label>
+                <input asp-for="Car.CodeVIN" class="form-control" />
+                <span asp-validation-for="Car.CodeVIN" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Car.Annee" class="control-label">Année</label>
+                <input asp-for="Car.Annee" class="form-control" type="number" min="1990" max="@DateTime.Now.ToString("yyyy")" />
+                <span asp-validation-for="Car.Annee" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Car.Marque" class="control-label">Marque</label>
+                <input asp-for="Car.Marque" class="form-control" />
+                <span asp-validation-for="Car.Marque" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Car.Modele" class="control-label">Modèle</label>
+                <input asp-for="Car.Modele" class="form-control" />
+                <span asp-validation-for="Car.Modele" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Car.Finition" class="control-label">Finition</label>
+                <input asp-for="Car.Finition" class="form-control" />
+                <span asp-validation-for="Car.Finition" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Car.DateAchat" class="control-label">Date d'achat</label>
+                <input asp-for="Car.DateAchat" class="form-control" type="date" min="1990-01-01" max="@DateTime.Now.ToString("yyyy-MM-dd")" />
+                <span asp-validation-for="Car.DateAchat" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Car.PrixAchat" class="control-label">Prix d'achat</label>
+                <input asp-for="Car.PrixAchat" class="form-control" />
+                <span asp-validation-for="Car.PrixAchat" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Car.Reparations" class="control-label">Réparations</label>
+                <input asp-for="Car.Reparations" class="form-control" />
+                <span asp-validation-for="Car.Reparations" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Car.CoutsReparation" class="control-label">Coûts de la réparation</label>
+                <input asp-for="Car.CoutsReparation" class="form-control" />
+                <span asp-validation-for="Car.CoutsReparation" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Car.DateDisponibilite" class="control-label">Date de la disponibilité</label>
+                <input asp-for="Car.DateDisponibilite" class="form-control" type="date" min="1990-01-01" max="@DateTime.Now.ToString("yyyy-MM-dd")" />
+                <span asp-validation-for="Car.DateDisponibilite" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Car.PrixVente" class="control-label">Prix de vente</label>
+                <input asp-for="Car.PrixVente" class="form-control" />
+                <span asp-validation-for="Car.PrixVente" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Car.DateVente" class="control-label">Date de la vente</label>
+                <input asp-for="Car.DateVente" class="form-control" type="date" min="1990-01-01" max="@DateTime.Now.ToString("yyyy-MM-dd")" />
+                <span asp-validation-for="Car.DateVente" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Car.Description" class="control-label">Description</label>
+                <input asp-for="Car.Description" class="form-control" />
+                <span asp-validation-for="Car.Description" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Créer" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="Index">Retour à la liste</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

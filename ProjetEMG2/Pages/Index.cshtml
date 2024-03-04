@@ -1,0 +1,21 @@
+﻿@page
+@model IndexModel
+@inject SignInManager<IdentityUser> SignInManager
+@{
+    ViewData["Title"] = "Page d'accueil EMG";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Bienvenue</h1>
+    <p>Vous pouvez consulter <a href="https://localhost:7224/Car">la liste des voitures</a>.</p>
+    <p><a href="https://localhost:7224/Account/Login">Connectez vous</a> en tant qu'administrateur afin de pouvoir ajouter, modifier et supprimer les voitures.<br/>
+        <br/>
+        Login administrateur : Owner@example.sn<br/>
+        Mot de passe : P@ssword1234
+        <br/>
+    </p>
+    @if (SignInManager.IsSignedIn(User))
+    {
+        <p>N'hésitez pas à <a href="https://localhost:7224/Account/Register">créer votre propre compte ou <a href="https://localhost:7224/Account/Login">vous connecter</a>!!!'</a></p>
+    }
+</div>

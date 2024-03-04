@@ -1,0 +1,92 @@
+﻿@page
+@model ProjetEMG2.Areas.Car.Pages.DetailsModel
+
+@{
+    ViewData["Title"] = "Details";
+    Layout = "~/Pages/Shared/_Layout.cshtml";
+}
+
+<h1>Détails</h1>
+
+<div>
+    <h4>Voiture</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            Année
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Car.Annee)
+        </dd>
+        <dt class="col-sm-2">
+            Marque
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Car.Marque)
+        </dd>
+        <dt class="col-sm-2">
+            Modèle
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Car.Modele)
+        </dd>
+        <dt class="col-sm-2">
+            Finition
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Car.Finition)
+        </dd>
+        <dt class="col-sm-2">
+            Date d'achat
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Car.DateAchat)
+        </dd>
+        <dt class="col-sm-2">
+            Prix d'achat
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Car.PrixAchat)
+        </dd>
+        <dt class="col-sm-2">
+            Réparations
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Car.Reparations)
+        </dd>
+        <dt class="col-sm-2">
+            Coûts de la réparation
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Car.CoutsReparation)
+        </dd>
+        <dt class="col-sm-2">
+            Date de disponibilité
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Car.DateDisponibilite)
+        </dd>
+        <dt class="col-sm-2">
+            Prix de vente
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Car.PrixVente)
+        </dd>
+        <dt class="col-sm-2">
+            Date de la vente
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Car.DateVente)
+        </dd>
+        <dt class="col-sm-2">
+            Description
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Car.Description)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-page="./Edit" asp-route-id="@Model.Car.CodeVIN">Modifier</a> |
+    <a asp-page="./Index">Retour à la liste</a>
+</div>

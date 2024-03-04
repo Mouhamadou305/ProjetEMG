@@ -1,0 +1,75 @@
+﻿@page
+@model ProjetEMG2.Areas.Car.Pages.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Pages/Shared/_Layout.cshtml";
+}
+
+<h1>Liste des voitures</h1>
+
+<p>
+    <a asp-page="Create">Nouveau</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                Année
+            </th>
+            <th>
+                Marque
+            </th>
+            <th>
+                Modèle
+            </th>
+            <th>
+                Finition
+            </th>
+            
+            <th>
+                Date de disponibilité
+            </th>
+            <th>
+                Prix de vente
+            </th>
+            <th>
+                Date de Vente
+            </th>
+           
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.Car) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Annee)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Marque)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Modele)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Finition)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DateDisponibilite)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PrixVente)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DateVente)
+            </td>
+            <td>
+                <a asp-page="./Edit" asp-route-id="@item.CodeVIN">Modifier</a> |
+                <a asp-page="./Details" asp-route-id="@item.CodeVIN">Détails</a> |
+                <a asp-page="./Delete" asp-route-id="@item.CodeVIN">Supprimer</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
